@@ -1,21 +1,21 @@
 package io.codeforall.bootcamp.Enemy;
 
 import io.codeforall.bootcamp.GameObject;
+import sun.awt.X11.XSystemTrayPeer;
 
 public abstract class Enemy extends GameObject {
-    private static String message = "Hello!";
+    private static String message;
     private int health;
     private boolean isDead;
 
-    //abstract class
-    private int hit;
 
 
     public Enemy(int health, boolean isDead, String message, int hit) {
         super(message);
         this.health = health;
         this.isDead = isDead;
-        this.hit = hit;
+        this.message = message;
+
     }
 
     public int getHealth() {
@@ -36,19 +36,15 @@ public abstract class Enemy extends GameObject {
     }
 
 
-    public int getHit(int effectiveDamage){
-        return hit;
-    }
 
-    public void setHit(int hit) {
-        this.hit = hit;
-    }
 
     //hit method - int
     public void hit(int damage){
         if (!isDead){
-            health -= damage;
-            checkIfDead();
+            setHealth(getHealth() - damage);
+            System.out.println("Enemy hit for" + damage + "damage!");
+        } else {
+            System.out.println("Enemy is already dead!");
         }
 
     }

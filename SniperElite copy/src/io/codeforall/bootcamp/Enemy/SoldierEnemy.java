@@ -11,6 +11,6 @@ public class SoldierEnemy extends Enemy {
     //override message
     @Override
     public String getMessage() {
-        return super.getMessage();
+        return "This is a soldier enemy!";
     }
 }

@@ -1,18 +1,20 @@
 package io.codeforall.bootcamp;
 
+import io.codeforall.bootcamp.Enemy.Enemy;
+
 public class SniperRifle {
     private int bulletDamage;
 
-    public SniperRifle(int bulletDamage) {
-        this.bulletDamage = bulletDamage;
+    public SniperRifle() {
+        this.bulletDamage = 30; //default damage value
     }
 
-    public int getBulletDamage(int bulletDamage) {
+   public int getBulletDamage(){
         return bulletDamage;
+   }
+    public void shoot(Enemy enemy) {
+        if
     }
 
-    public void setBulletDamage(int bulletDamage) {
-        this.bulletDamage = 1;
-    }
 }
 //shoot enemy method

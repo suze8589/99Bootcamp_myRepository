@@ -29,6 +29,10 @@ public class Bank {
         if (state.equals("600$")) {
             System.out.println("Your new balance account: 600.00$");
             return;
+
+            if (state.equals("200$")){
+                System.out.println("Your withdraw from you account: " + bankAccount.getWithdraw());
+            }
         }
     }
 

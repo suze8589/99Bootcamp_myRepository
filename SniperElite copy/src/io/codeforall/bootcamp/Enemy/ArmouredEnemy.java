@@ -31,11 +31,6 @@ public class ArmouredEnemy extends Enemy {
     //armour method
 
     public void hit(int damage){
-        int effectiveDamage = damage - armour;
-        if (effectiveDamage < 0) {
-            effectiveDamage = 0;
-        }
 
-        super.getHit(effectiveDamage);
     }
 }
