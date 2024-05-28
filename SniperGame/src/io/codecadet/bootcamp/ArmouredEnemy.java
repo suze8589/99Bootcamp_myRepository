@@ -18,19 +18,17 @@ public class ArmouredEnemy extends Enemy {
 
 
     // use the hit method to decrease armor
+    //start by decreasing the armour
     public void hit(int damage) {
 
         if (armour > 0) {
-
             armour -= damage;
-
             if (armour < 0) {
+                damage += armour;
 
                 armour = 0;
 
             }
-
-        } else {
 
             super.hit(damage);
 
