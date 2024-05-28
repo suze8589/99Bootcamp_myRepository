@@ -10,7 +10,7 @@ public class Main {
         if (soldierEnemy.checkHealth()) {
             System.out.println("The soldier enemy is dead!");
         } else {
-            System.out.println("The soldier enemy is still alive");
+            System.out.println("The soldier enemy is still alive!");
         }
 
         // create an armoured enemy
