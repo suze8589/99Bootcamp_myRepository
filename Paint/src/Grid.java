@@ -1,4 +1,3 @@
-import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public class Grid {
@@ -6,17 +5,17 @@ public class Grid {
     private static final int cellSize = 30;
     private int width;
     private int height;
-    private int cols;
-    private int rows;
+    //private int cols;
+    //private int rows;
 
 
 
 
-    public Grid(int width, int height, int cols, int rows) {
+    public Grid(int width, int height) {
         this.width = width;
         this.height = height;
-        this.cols = cols;
-        this.rows = rows;
+        //this.cols = cols;
+        //this.rows = rows;
     }
 
 

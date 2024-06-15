@@ -1,20 +1,17 @@
 
+import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
-import javax.crypto.spec.DESKeySpec;
-
 public class Player {
-    private Rectangle player;
-    private int gridCols;
-    private int gridRows;
-    private int cellSize;
+    private final Rectangle player;
+    //private int cellSize;
 
-    public Player(Rectangle player, int gridCols, int gridRows, int cellSize) {
+    public Player(Rectangle player) {
         this.player = player;
-        this.gridCols = gridCols;
-        this.gridRows = gridRows;
-        this.cellSize = cellSize;
+        this.player.setColor(Color.GREEN);//I don't understand why here?
     }
+
+
 
     public void fill() {
         player.fill();
@@ -47,7 +44,7 @@ public class Player {
         DOWN
     }
 
-    public boolean borderWall(Direction direction) {
+    /*public boolean borderWall(Direction direction) {
         int x = player.getX();
         int y = player.getY();
 
@@ -76,7 +73,7 @@ public class Player {
 
         return false;
 
-    }
+    }*/
 }
 
 

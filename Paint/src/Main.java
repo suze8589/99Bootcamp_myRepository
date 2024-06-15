@@ -11,6 +11,7 @@ public class Main {
 
 
        Player player = new Player(new Rectangle(10, 10, 30, 30));
+
        player.fill();
 
 
