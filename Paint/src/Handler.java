@@ -76,9 +76,11 @@ public class Handler implements KeyboardHandler {
                         break;
 
                         case KeyboardEvent.KEY_SPACE:
-                            //player.paint();
-                            //using this I can fill the rectangle
-                            System.exit(1);
+                            //int col = (player.getX() - 10) / grid.getCellSize();
+                            //int row = (player.getY() - 10) / grid.getCellSize();
+                            //grid.toggleCell(col, row);
+                            player.isPainted(); //using this I can fill the rectangle
+                            //System.exit(1);
                         break;
         }
     }

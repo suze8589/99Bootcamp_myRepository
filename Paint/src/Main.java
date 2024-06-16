@@ -1,6 +1,6 @@
-import org.academiadecodigo.simplegraphics.graphics.Ellipse;
+
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
-import org.academiadecodigo.simplegraphics.pictures.Picture;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -8,17 +8,12 @@ public class Main {
         Grid grid = new Grid(600,600);
         grid.init();
 
-
-
-       Player player = new Player(new Rectangle(10, 10, 30, 30));
-
-       player.fill();
-
-
+        Player player = new Player(new Rectangle(10, 10, grid.getCellSize(), grid.getCellSize()), grid);
+        player.fill(); //initializes th rectangle player
 
         new Handler(player, grid);
 
-        System.out.println("Hello");
+       //System.out.println("Hello");
 
     }
 }
