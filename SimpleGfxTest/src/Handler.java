@@ -3,13 +3,15 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
+import javax.swing.plaf.basic.BasicSplitPaneUI;
+import java.awt.event.KeyEvent;
+
 public class Handler implements KeyboardHandler {
 
     public Keyboard keyboard;
     public Player player;
 
-
-    public Handler(Player player) {
+    public Handler( Player player) {
         this.player = player;
         keyboard = new Keyboard(this);
         createKeyboardEvents();
@@ -24,54 +26,29 @@ public class Handler implements KeyboardHandler {
         KeyboardEvent keyboardEventLeft = new KeyboardEvent();
         keyboardEventLeft.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         keyboardEventLeft.setKey(KeyboardEvent.KEY_LEFT);
-        keyboard.addEventListener(keyboardEventLeft);
-
-        KeyboardEvent keyboardEventUp = new KeyboardEvent();
-        keyboardEventUp.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        keyboardEventUp.setKey(KeyboardEvent.KEY_UP);
-        keyboard.addEventListener(keyboardEventUp);
-
-
-        KeyboardEvent keyboardEventDown = new KeyboardEvent();
-        keyboardEventDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        keyboardEventDown.setKey(KeyboardEvent.KEY_DOWN);
-        keyboard.addEventListener(keyboardEventDown);
-
-        KeyboardEvent keyboardEventSpace = new KeyboardEvent();
-        keyboardEventSpace.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        keyboardEventSpace.setKey(KeyboardEvent.KEY_SPACE);
-        keyboard.addEventListener(keyboardEventSpace);
+        keyboard.addEventListener(keyboardEventRight);
     }
 
-
     @Override
-    public void keyPressed(KeyboardEvent keyboardEvent) {
+    public void keyPressed(KeyboardEvent keyboardEvent){
 
-        switch (keyboardEvent.getKey()) {
-            case KeyboardEvent.KEY_RIGHT:
-                player.moveRight();
-                break;
+       switch (keyboardEvent.getKey()) {
+           case KeyboardEvent.KEY_RIGHT:
+               player.moveRight();
+               break;
 
-                case KeyboardEvent.KEY_LEFT:
-                    player.moveLeft();
-                    break;
+               case KeyboardEvent.KEY_LEFT:;
+               player.moveLeft();
+               break;
 
-                    case KeyboardEvent.KEY_UP:
-                    player.moveUp();
-                    break;
-
-                        case KeyboardEvent.KEY_DOWN:
-                        player.moveDown();
-                        break;
-
-                        case KeyboardEvent.KEY_SPACE:
-                            System.exit(1);
-                        break;
+               case KeyboardEvent.KEY_SPACE:;
+               break;
         }
+
     }
 
     @Override
-    public void keyReleased(KeyboardEvent keyboardEvent) {
+    public void keyReleased(KeyboardEvent keyboardEvent){
 
     }
 }
