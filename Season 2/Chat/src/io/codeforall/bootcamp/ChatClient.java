@@ -19,12 +19,24 @@ public class ChatClient {
 
     public ChatClient(Socket clientSocket) {
         this.clientSocket = clientSocket;
-
+    try {
+        PrintWriter outPut = new PrintWriter(clientSocket.getOutputStream(), true);
+        BufferedReader inPut = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+        BufferedReader systemIn = new BufferedReader(new InputStreamReader(System.in));
+    }catch (IOException e){
+        e.printStackTrace();
+    }
 
     }
 
     public static void main(String[] args) {
-
+         try{
+             Socket socket = new Socket("localhost", 8085);
+             ChatClient client = new ChatClient(socket);
+             //Implement chat client logic here
+         } catch (IOException e){
+             e.printStackTrace();
+         }
 
 
     }
@@ -34,18 +46,18 @@ public class ChatClient {
         //client envia o pedido
         try {
             clientSocket = new Socket(serverAddress, severPort);
+            inPut = new BufferedReader( new InputStreamReader(clientSocket.getInputStream()));
+            outPut = new PrintWriter(clientSocket.getOutputStream(), true);
+            systemIn = new BufferedReader(new InputStreamReader(System.in));
+
+            Thread clientThread = new Thread((Runnable) clientSocket);
+
+            clientThread.start();
+
         } catch (IOException e){
             e.printStackTrace();
 
         }
-
-
-
-        PrintWriter outPut = new PrintWriter(clientSocket.getOutputStream(), true);
-        BufferedReader inPut = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-        BufferedReader systemIn = new BufferedReader(new InputStreamReader(System.in));
-
-        Thread clientThread = new Thread(startConnection("localhost",8085);  
 
 
 
