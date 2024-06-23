@@ -9,7 +9,7 @@ public class ChatClient {
     private Socket socket;
 
     public ChatClient(String serverAddress) throws IOException {
-        socket = new Socket(serverAddress, 59001);
+        socket = new Socket(serverAddress, 8085);
         in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         out = new PrintWriter(socket.getOutputStream(), true);
     }

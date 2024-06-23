@@ -20,7 +20,8 @@ public class ChatClient {
         this.outPut = new PrintWriter(clientSocket.getOutputStream(),true);
         this.inPut = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         this.systemIn = new BufferedReader(new InputStreamReader(System.in));
-    }catch (IOException e){
+
+    } catch (IOException e){
         e.printStackTrace();
     }
 
@@ -50,11 +51,12 @@ public class ChatClient {
 
         //Implement chat client logic here
         try{
-
-            Socket socket = new Socket("localhost", 8085);
-            ChatClient client = new ChatClient(socket);
-            client.startConnection();
-
+            for(int i = 0; i < 3; i++) {
+                Socket socket = new Socket("localhost", 8085);
+                ChatClient client = new ChatClient(socket);
+                Thread clientThread = new Thread(() -> client.startConnection());//lambda expression
+                clientThread.start();
+            }
         } catch (IOException e){
             e.printStackTrace();
         }
@@ -77,9 +79,12 @@ public class ChatClient {
                 System.out.println("Server: " + message);
             }
         }catch (IOException e) {
+                //do I need to close the connection?
+                //client.closeConnection();
                 System.out.println("Connection closed.");
             }
         }
+
 
 
     }
