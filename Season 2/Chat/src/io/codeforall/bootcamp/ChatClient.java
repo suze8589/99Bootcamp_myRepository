@@ -1,7 +1,5 @@
 package io.codeforall.bootcamp;
 
-import sun.util.resources.en.TimeZoneNames_en_CA;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,57 +12,77 @@ public class ChatClient {
     private BufferedReader inPut;
     private BufferedReader systemIn;
     private PrintWriter outPut;
-    private String userInPut;
 
 
     public ChatClient(Socket clientSocket) {
         this.clientSocket = clientSocket;
     try {
-        PrintWriter outPut = new PrintWriter(clientSocket.getOutputStream(), true);
-        BufferedReader inPut = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-        BufferedReader systemIn = new BufferedReader(new InputStreamReader(System.in));
+        this.outPut = new PrintWriter(clientSocket.getOutputStream(),true);
+        this.inPut = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+        this.systemIn = new BufferedReader(new InputStreamReader(System.in));
     }catch (IOException e){
         e.printStackTrace();
     }
 
     }
 
-    public static void main(String[] args) {
-         try{
-             Socket socket = new Socket("localhost", 8085);
-             ChatClient client = new ChatClient(socket);
-             //Implement chat client logic here
-         } catch (IOException e){
-             e.printStackTrace();
-         }
 
+
+    public void startConnection() {
+        //Thread to read messages from the server
+
+            Thread serverThread = new Thread(new ServerHandler(inPut));
+            serverThread.start();
+
+        //Main thread to handle user input
+        String userInPut;
+        try{
+            while((userInPut = systemIn.readLine()) != null){
+                outPut.println(userInPut);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
+    public static void main(String[] args) {
 
-    public void startConnection(String serverAddress, int severPort) {
-        //client envia o pedido
-        try {
-            clientSocket = new Socket(serverAddress, severPort);
-            inPut = new BufferedReader( new InputStreamReader(clientSocket.getInputStream()));
-            outPut = new PrintWriter(clientSocket.getOutputStream(), true);
-            systemIn = new BufferedReader(new InputStreamReader(System.in));
+        //Implement chat client logic here
+        try{
 
-            Thread clientThread = new Thread((Runnable) clientSocket);
-
-            clientThread.start();
+            Socket socket = new Socket("localhost", 8085);
+            ChatClient client = new ChatClient(socket);
+            client.startConnection();
 
         } catch (IOException e){
             e.printStackTrace();
-
         }
-
-
-
 
 
     }
 
+    private static class ServerHandler implements Runnable{
+        private BufferedReader inPut;
 
+        public ServerHandler(BufferedReader inPut){
+            this.inPut = inPut;
+        }
+
+        @Override
+        public void run() {
+            String message;
+            try{
+            while((message = inPut.readLine()) != null){
+                System.out.println("Server: " + message);
+            }
+        }catch (IOException e) {
+                System.out.println("Connection closed.");
+            }
+        }
+
+
+    }
 }
+
 

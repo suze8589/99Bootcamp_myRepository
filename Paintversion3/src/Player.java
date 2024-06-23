@@ -53,7 +53,7 @@ public class Player {
     }
 
 
-    public void paint(){
+    /*public void paint(){
         if (!painted) {
             //player.setColor(Color.MAGENTA);
             player.fill();
@@ -74,14 +74,14 @@ public class Player {
         } else {
             paint();
         }
-    }
+    }*/
 
     public int getX() {
-        return 0;
+        return player.getX();
     }
 
     public int getY() {
-        return 0;
+        return player.getY();
     }
 
 

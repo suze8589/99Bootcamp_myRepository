@@ -50,7 +50,6 @@ public class Handler implements KeyboardHandler {
         //int row = (cellX - 10) / cellSize;
         // col = (cellY - 10) / cellSize;
         //grid.paintCell(row, col, player.getPlayer().getColor());
-        //break;
         //
     }
 

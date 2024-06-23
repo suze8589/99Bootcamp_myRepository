@@ -11,8 +11,7 @@ public class Grid {
     private int rows;
     private CellPaint[][] cellPaints;
     private Rectangle[][] cells;
-    //private boolean painted;
-   // private Rectangle[][] cells;
+
 
     private enum CellPaint{
         ERASED,
@@ -23,12 +22,11 @@ public class Grid {
     public Grid(int width, int height) {
         this.width = width;
         this.height = height;
-        this.cols = cols * cellSize;// This multiplication calculates the total width;
-        this.rows = rows * cellSize;// This multiplication calculates the total height;
+        this.cols = width / cellSize;// This multiplication calculates the total width;
+        this.rows = height / cellSize;// This multiplication calculates the total height;
         this.cellPaints = new CellPaint[cols][rows];
         this.cells = new Rectangle[cols][rows];
-        //this.cells = new Rectangle[cols][rows];
-        //this.painted = false;
+
     }
 
 
@@ -44,13 +42,19 @@ public class Grid {
                 System.out.println("*****************************");
 
                 Rectangle cell = new Rectangle(i, j, cellSize, cellSize);
+                //Rectangle cell = new Rectangle(10 + i * cellSize, 10 + j * cellSize, cellSize, cellSize);
                 cell.draw();
+
+
 
             }
         }
     }
 
     public void paint(int cols, int rows){
+
+
+
         switch (cellPaints[cols][rows]){
             case ERASED:
                 paintCell(cols,rows);
@@ -74,28 +78,6 @@ public class Grid {
     }
 
 
-
-    /*public void paintCell(int col, int row) {
-        if (!cells[col][row].isFilled()) {
-            cells[col][row].setColor(Color.MAGENTA);
-            cells[col][row].fill();
-        }
-    }
-
-    public void eraseCell(int col, int row) {
-        if (cells[col][row].isFilled()) {
-            cells[col][row].draw();
-        }
-    }
-
-    public void toggleCell(int col, int row) {
-        if (cells[col][row].isFilled()) {
-            eraseCell(col, row);
-        } else {
-            paintCell(col, row);
-        }
-    }*/
-
     public int getCellSize(){
         return cellSize;
     }
@@ -116,18 +98,6 @@ public class Grid {
         return rows;
     }
 
-
-//cellSize.setColor(Color.BLUE); // Set the desired color
-    //        cellSize.fill();
-    //int cellSize com uma variavel para w e h
-    // i = i + cellSize;
-
-
-    //for loop
-    //dentro de outro for
-
-    //for (int i = 0; i < cellSize.width; i = i + cellSize)
-       // for (int j = 0; i < cellSize.height; j = j)
 
 
 
