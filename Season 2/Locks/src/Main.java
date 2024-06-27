@@ -16,6 +16,6 @@ public class Main {
         mariana.start();
 
 
-        //System.out.println("Naughty MCs!");
+        System.out.println("Naughty MCs!");
     }
 }

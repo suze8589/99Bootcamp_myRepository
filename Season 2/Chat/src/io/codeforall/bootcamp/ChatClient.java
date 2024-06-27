@@ -30,12 +30,7 @@ public class ChatClient {
 
     //starts
     public void startConnection() {
-        //Thread to read messages from the server
-        //creates a new thread to handle incoming server messages
-        //Thread thread = new Thread(new ChatHandler(inPut));
-        //thread.start();
 
-        //Main thread to handle user input
         String userInPut;
         try{
             while((userInPut = systemIn.readLine()) != null){
@@ -59,7 +54,7 @@ public class ChatClient {
                 ChatClient client = new ChatClient(socket);
 
 
-                Thread clientThread = new Thread(new ChatHandler(client.inPut) );//lambda expression
+                Thread clientThread = new Thread(new ChatHandler(client.inPut) );
                 clientThread.start();
                 client.startConnection();
             }
