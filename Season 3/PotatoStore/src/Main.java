@@ -58,11 +58,16 @@ public class Main {
 
         }
 
-        //Start login process
+        //Starting login process with a question
         System.out.println("######  Before we process your order, please login.  ######\n");
 
 
         //Define the login username options
+        //to ask the user it has to match one of these three users if not you can create a new one
+
+        //password: MisterFrodo if it is Sam,
+        //password: FrodoBaggins if it is Frodo
+        //password: MyPrecious if it is Gollum
 
         Map<String, String> userLogin = new HashMap<>();
         userLogin.put("Sam", "MisterFrodo");
@@ -77,6 +82,7 @@ public class Main {
 
 
         //check if the username is valid
+        while(true){
         if(userLogin.containsKey(username)){
             //prompt for password based on username
             StringInputScanner passwordQuestion = new StringInputScanner();
@@ -85,34 +91,29 @@ public class Main {
             String password;
 
             //loop to validate password
-            while (true) {
+
                 password = prompt.getUserInput(passwordQuestion);
 
                 //to very if the password is in set of strings --> HashMap
                 if(userLogin.get(username).equalsIgnoreCase(password)){
                     System.out.println("Login successful!\n");
+
                 } else {
                     System.out.println("Invalid password. Please try again.\n");
                 }
-            }
-
-        } else {
+            } else {
             System.out.println("Username not found. You can create a new account.\n");
+
+            }
         }
-        //to ask the user it has to match one of these three users if not you can create a new one
 
-        //password: MisterFrodo if it is Sam,
-        //password: FrodoBaggins if it is Frodo
-        //password: MyPrecious if it is Gollum
-
-
+            //IntegerInputScanner question3 = new IntegerInputScanner();
+            //question3.setMessage("Do you want to add more potatoes?");
+            //int numberPotatoes = prompt.getUserInput(question3);
+            //System.out.println("We will get you these many potatoes:  " + numberPotatoes);
 
 
 
-        IntegerInputScanner question3 = new IntegerInputScanner();
-        question3.setMessage("How many bags do you want?");
-        int numberBags = prompt.getUserInput(question3);
-        System.out.println("We will get you these many rabbits:  " + numberBags);
 
     }
 }
