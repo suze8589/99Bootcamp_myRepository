@@ -34,6 +34,7 @@ public class ChatClient {
         String userInPut;
         try{
             while((userInPut = systemIn.readLine()) != null){
+                System.out.println("Client: ");
                 outPut.println(userInPut);
             }
         } catch (IOException e) {
@@ -42,35 +43,54 @@ public class ChatClient {
 
     }
 
+    public void closeConnection(){
+        try{
+            inPut.close();
+            outPut.close();
+            clientSocket.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
 
         //Implement chat client logic here
         //needs to be a while.....
-        try{
-            for(int i = 0; i < 3; i++) {
+        boolean isConnected = true;
+        while(isConnected) {
+            try {
+                //prompt the user for their name
+                System.out.println("Enter your name: ");
+                BufferedReader systemIn = new BufferedReader(new InputStreamReader(System.in));
+                String userName = systemIn.readLine();
+
+                System.out.println("You are now chatting as " + userName);
                 //sending the request for connection
                 //a socket is a end-point
                 Socket socket = new Socket("localhost", 8085);
                 ChatClient client = new ChatClient(socket);
-
-
-                Thread clientThread = new Thread(new ChatHandler(client.inPut) );
+                client.outPut.println("username: " + userName);//send the username to the server
+                Thread clientThread = new Thread(new ChatHandler(client.inPut, client));
                 clientThread.start();
                 client.startConnection();
-            }
-        } catch (IOException e){
-            e.printStackTrace();
-        }
 
+            } catch (IOException e) {
+                e.printStackTrace();
+                isConnected = false;
+            }
+        }
 
     }
     //runnable to handle incoming messages from the server!
     //this class represents a task, in the begging of the program the main thread delegates to this thread
     private static class ChatHandler implements Runnable{
         private BufferedReader inPut;
+        private ChatClient client;
 
-        public ChatHandler(BufferedReader inPut){
+        public ChatHandler(BufferedReader inPut, ChatClient client){
             this.inPut = inPut;
+            this.client = client;
         }
 
         @Override
@@ -79,14 +99,13 @@ public class ChatClient {
             //
             try{
             while((message = inPut.readLine()) != null){
-                System.out.println("Server: " + message);
+                System.out.println("Client: " + message);
             }
 
         }   catch (IOException e) {
                 // I need to close the connection
                 //close inPut stream
-                //client.closeConnection();
-                //socket.close();
+                client.closeConnection();
                 System.out.println("Connection closed.");
             }
         }

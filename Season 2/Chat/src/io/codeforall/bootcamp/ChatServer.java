@@ -104,7 +104,7 @@ public class ChatServer {
         String message;
         try {
             while ((message = in.readLine()) != null) {
-                System.out.println("Message received: " + message);
+                System.out.println("Message send to client: " + message);
                 server.broadcast(message, this);
             }
         } catch (IOException e) {
