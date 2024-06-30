@@ -7,6 +7,12 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import static java.lang.System.err;
+import static java.lang.System.out;
 
 //
 
@@ -31,16 +37,18 @@ public class ChatServer {
     //Socket clientSocket = serverSocket.accept();
     //sout "client accepted: " + clientSocket
     public void start() {
-        System.out.println("Chat server started on port" + PORT);
+
+        out.println("Chat server started on port " + PORT);
         while(true){
             try {
                 Socket clientSocket = serverSocket.accept();
-                System.out.println("Client connected: " + clientSocket);
+                out.println("Client connected: " + clientSocket);
+                ServerWorker worker = new ServerWorker(this, clientSocket);//instantiation of the variable worker
                 workers.add(worker);
-                new Thread(worker).start();
+                new Thread(worker).start(); //starts a new thread
 
             } catch (IOException e){
-                System.out.println("Error accepting client connection" + e.getMessage());
+                out.println("Error accepting client connection" + e.getMessage());
          }
      }
  }
@@ -63,7 +71,7 @@ public class ChatServer {
  //broadcast a message to all server connected clients
 
     public void broadcast(String message, ServerWorker sender) {
-     for(ServerSocket worker : workers){
+     for(ChatServer.ServerWorker worker : workers){
          if(worker != sender) {
              worker.sendMessage(message);
          }
@@ -72,43 +80,59 @@ public class ChatServer {
  //class ServerWorker handles the connection and implements runnable
  // bufferedReader and bufferedWriter
 
-class ServerWorker implements Runnable {
- private ChatServer server;
- private Socket clientSocket;
- private PrintWriter out;
- private BufferedReader in;
-
- 
-
- public ServerWorker(ChatServer server, Socket clientSocket){
-  this.server = server;
-  this.clientSocket = clientSocket;
-  try {
-   this.out = new PrintWriter(clientSocket.getOutputStream(), true);
-   this.in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-  } catch (IOException e){
-   e.printStackTrace();
-  }
- }
+    class ServerWorker implements Runnable {
+        private ChatServer server;
+        private Socket clientSocket;
+        private PrintWriter out;
+        private BufferedReader in;
 
 
-   @Override
-   public void run() {
+    public ServerWorker(ChatServer server, Socket clientSocket) {
+        this.server = server;
+        this.clientSocket = clientSocket;
+        try {
+            this.out = new PrintWriter(clientSocket.getOutputStream(), true);
+            this.in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
-       String message;
-       try {
-           while ((message = in.readLine()) != null) {
+    @Override
+    public void run() {
+        String message;
+        try {
+            while ((message = in.readLine()) != null) {
+                System.out.println("Message received: " + message);
+                server.broadcast(message, this);
+            }
+        } catch (IOException e) {
+            out.println("Error handling client connection: " + e.getMessage());
+        } finally {
+        server.workers.remove(this);//
+    }   try{
+            clientSocket.close();
+        } catch (IOException e){
+            e.printStackTrace();
+         }
 
-               System.out.println("Message received: " + message);
-               server.broadcast(message, this);
-           }
-       } catch (IOException e) {
-           throw new RuntimeException(e);
+        } public void sendMessage(String message){
+            out.println(message);
+    }
+}
 
-       }
-   }
 
+    public static void main(String[] args) {
+        try{
+            ChatServer server = new ChatServer();
+            server.start();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
+}
 
 
 
