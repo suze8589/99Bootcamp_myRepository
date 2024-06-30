@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87e3e14e-9baf-4ecb-9f6c-85bee78bb7b4" name="Changes" comment="" />
+    <list default="true" id="87e3e14e-9baf-4ecb-9f6c-85bee78bb7b4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Season 2/Chat/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/Chat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Season 2/Chat/Chat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/out/io/codeforall/bootcamp/ChatClient$ServerHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/out/io/codeforall/bootcamp/ChatClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/out/production/Chat/io/codeforall/bootcamp/ChatClient$ChatHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Season 2/Chat/out/production/Chat/io/codeforall/bootcamp/ChatClient$ChatHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/out/production/Chat/io/codeforall/bootcamp/ChatClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Season 2/Chat/out/production/Chat/io/codeforall/bootcamp/ChatClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/out/production/Chat/io/codeforall/bootcamp/ChatServer$start.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/out/production/Chat/io/codeforall/bootcamp/ChatServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Season 2/Chat/out/production/Chat/io/codeforall/bootcamp/ChatServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/src/io/codeforall/bootcamp/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Season 2/Chat/src/io/codeforall/bootcamp/ChatServer.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +28,9 @@
         <option value="Enum" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -34,8 +48,9 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/codecadet/Desktop/Paintversion2",
+    "last_opened_file_path": "//wsl.localhost/Ubuntu/home/susana/myRepository/Season 2/Chat",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
