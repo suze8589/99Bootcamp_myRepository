@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87e3e14e-9baf-4ecb-9f6c-85bee78bb7b4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Season 2/Chat/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/Chat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Season 2/Chat/Chat.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/out/io/codeforall/bootcamp/ChatClient$ServerHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/out/io/codeforall/bootcamp/ChatClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/out/production/Chat/io/codeforall/bootcamp/ChatClient$ChatHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Season 2/Chat/out/production/Chat/io/codeforall/bootcamp/ChatClient$ChatHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/out/production/Chat/io/codeforall/bootcamp/ChatClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Season 2/Chat/out/production/Chat/io/codeforall/bootcamp/ChatClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/out/production/Chat/io/codeforall/bootcamp/ChatServer$start.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/out/production/Chat/io/codeforall/bootcamp/ChatServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Season 2/Chat/out/production/Chat/io/codeforall/bootcamp/ChatServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Season 2/Chat/src/io/codeforall/bootcamp/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Season 2/Chat/src/io/codeforall/bootcamp/ChatServer.java" afterDir="false" />
-    </list>
+    <list default="true" id="87e3e14e-9baf-4ecb-9f6c-85bee78bb7b4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,9 +18,6 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -43,19 +29,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "//wsl.localhost/Ubuntu/home/susana/myRepository/Season 2/Chat",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/codecadet/Desktop/Paintversion3&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\suzan\IdeaProjects\SimpleGfxTest\lib" />
@@ -87,6 +72,14 @@
       <option name="presentableId" value="Default" />
       <updated>1717358774548</updated>
       <workItem from="1718553852673" duration="962000" />
+      <workItem from="1718618736677" duration="149000" />
+      <workItem from="1718698228654" duration="1565000" />
+      <workItem from="1718729602723" duration="349000" />
+      <workItem from="1718732191112" duration="346000" />
+      <workItem from="1719419318325" duration="857000" />
+      <workItem from="1719481957860" duration="1115000" />
+      <workItem from="1719755727942" duration="1935000" />
+      <workItem from="1719770969851" duration="462000" />
     </task>
     <servers />
   </component>

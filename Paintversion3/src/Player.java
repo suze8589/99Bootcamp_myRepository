@@ -6,12 +6,12 @@ public class Player {
     private final Rectangle player;
     private final Grid grid;//the constructor needs to now the grid to reference grid boundaries.
     //private int cellSize;
-    private boolean painted;
+    //private boolean painted;
 
     public Player(Rectangle player, Grid grid) {
         this.player = player;
         this.grid = grid;
-        this.painted = true;
+        //this.painted = true;
     }
 
 
@@ -52,36 +52,17 @@ public class Player {
         }
     }
 
-
-    /*public void paint(){
-        if (!painted) {
-            //player.setColor(Color.MAGENTA);
-            player.fill();
-            painted = true;
-        }
+    public void paintCell(){
+        int col = (player.getX() - 10) / grid.getCellSize();
+        int row = (player.getY() - 10) / grid.getCellSize();
+        grid.paint(col,row);
     }
-
-    public void erase(){
-        if(painted) {
-            player.draw();
-            painted = false;
-        }
-    }
-
-    public void isPainted() {
-        if (painted) {
-            erase();
-        } else {
-            paint();
-        }
-    }*/
-
     public int getX() {
-        return player.getX();
+        return 0;
     }
 
     public int getY() {
-        return player.getY();
+        return 0;
     }
 
 

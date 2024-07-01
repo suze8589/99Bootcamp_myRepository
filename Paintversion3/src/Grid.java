@@ -11,22 +11,24 @@ public class Grid {
     private int rows;
     private CellPaint[][] cellPaints;
     private Rectangle[][] cells;
-
+    //private boolean painted;
+   // private Rectangle[][] cells;
 
     private enum CellPaint{
-        ERASED,
-        PAINTED
+        ERASE,
+        PAINT
     }
 
 
     public Grid(int width, int height) {
         this.width = width;
         this.height = height;
-        this.cols = width / cellSize;// This multiplication calculates the total width;
-        this.rows = height / cellSize;// This multiplication calculates the total height;
+        this.cols = width / cellSize;
+        this.rows = height / cellSize;
         this.cellPaints = new CellPaint[cols][rows];
         this.cells = new Rectangle[cols][rows];
-
+        //this.cells = new Rectangle[cols][rows];
+        //this.painted = false;
     }
 
 
@@ -36,47 +38,73 @@ public class Grid {
         Rectangle outerRectangle = new Rectangle(10, 10, width, height);
         outerRectangle.draw();
 
-        for (int i = 10; i < width; i += cellSize) {
-            System.out.println("########################");
-            for (int j = 10; j < height; j += cellSize) {
-                System.out.println("*****************************");
+        for (int col = 0; col < cols; col++) {
+            System.out.println("This is my grid my created!!");
+            for (int row = 0; row < rows; row++) {
+                int x = 10 + col * cellSize;
+                int y = 10 + row * cellSize;
+                System.out.println("WOWOWOWOOWOWOWOOWOWOOW");
 
-                Rectangle cell = new Rectangle(i, j, cellSize, cellSize);
-                //Rectangle cell = new Rectangle(10 + i * cellSize, 10 + j * cellSize, cellSize, cellSize);
-                cell.draw();
-
-
+                cells[col][row] = new Rectangle(x, y, cellSize, cellSize);
+                cells[col][row].draw();//instanciar e guardar numa array list, talvez
+                cellPaints[col][row] = CellPaint.PAINT;
+                //comparar o x e o y da cellsize da grid com o curso
 
             }
         }
     }
 
-    public void paint(int cols, int rows){
-
-
-
-        switch (cellPaints[cols][rows]){
-            case ERASED:
-                paintCell(cols,rows);
-                break;
-            case PAINTED:
-                eraseCell(cols,rows);
-                break;
+    public void paint(int col, int row){
+        if(col >= 0 && col < cols && row >= 0 && row < rows) {
+            switch (cellPaints[col][row]) {
+                case ERASE:
+                    paintCell(col, row);
+                    break;
+                case PAINT:
+                    eraseCell(col, row);
+                    break;
+            }
         }
     }
 
-    public void paintCell(int cols, int rows){
-        cells[cols][rows].setColor(Color.BLACK);
-        cells[cols][rows].fill();
-        cellPaints[cols][rows] = CellPaint.PAINTED;
+    public void paintCell(int col, int row){
+        System.out.println("PAINT IT BLACK! PAINT IT BLACK! PAINT IT BLACK");
+        cells[col][row].setColor(Color.BLACK);
+        cells[col][row].fill();
+        cellPaints[col][row] = CellPaint.PAINT;
     }
 
-    public void eraseCell(int cols, int rows){
-        cells[cols][rows].setColor(Color.WHITE);
-        cells[cols][rows].fill();
-        cellPaints[cols][rows] = CellPaint.ERASED;
+    public void eraseCell(int col, int row){
+        System.out.println("I'm a painting WHITE!WHITE!WHITE!WHITE!");
+        cells[col][row].setColor(Color.WHITE);
+        cells[col][row].fill();
+        cellPaints[col][row] = CellPaint.ERASE;
     }
 
+
+
+
+
+    /*public void paintCell(int col, int row) {
+        if (!cells[col][row].isFilled()) {
+            cells[col][row].setColor(Color.MAGENTA);
+            cells[col][row].fill();
+        }
+    }
+
+    public void eraseCell(int col, int row) {
+        if (cells[col][row].isFilled()) {
+            cells[col][row].draw();
+        }
+    }
+
+    public void toggleCell(int col, int row) {
+        if (cells[col][row].isFilled()) {
+            eraseCell(col, row);
+        } else {
+            paintCell(col, row);
+        }
+    }*/
 
     public int getCellSize(){
         return cellSize;
@@ -98,6 +126,18 @@ public class Grid {
         return rows;
     }
 
+
+//cellSize.setColor(Color.BLUE); // Set the desired color
+    //        cellSize.fill();
+    //int cellSize com uma variavel para w e h
+    // i = i + cellSize;
+
+
+    //for loop
+    //dentro de outro for
+
+    //for (int i = 0; i < cellSize.width; i = i + cellSize)
+       // for (int j = 0; i < cellSize.height; j = j)
 
 
 

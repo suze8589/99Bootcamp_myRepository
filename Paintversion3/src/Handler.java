@@ -50,6 +50,7 @@ public class Handler implements KeyboardHandler {
         //int row = (cellX - 10) / cellSize;
         // col = (cellY - 10) / cellSize;
         //grid.paintCell(row, col, player.getPlayer().getColor());
+        //break;
         //
     }
 
@@ -75,9 +76,10 @@ public class Handler implements KeyboardHandler {
                         break;
 
                         case KeyboardEvent.KEY_SPACE:
-                            int col = (player.getX() - 10) / grid.getCellSize();
-                            int row = (player.getY() - 10) / grid.getCellSize();
-                            grid.paint(col, row);
+                            player.paintCell();
+                            //int col = (player.getX() - 10) / grid.getCellSize();
+                            //int row = (player.getY() - 10) / grid.getCellSize();
+                            //grid.paint(col, row);
 
                             //grid.toggleCell(col, row);
                             //player.isPainted(); //using this I can fill the rectangle
