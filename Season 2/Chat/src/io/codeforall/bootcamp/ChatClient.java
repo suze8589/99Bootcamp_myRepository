@@ -70,7 +70,7 @@ public class ChatClient {
                 //a socket is a end-point
                 Socket socket = new Socket("localhost", 8085);
                 ChatClient client = new ChatClient(socket);
-                client.outPut.println("username: " + userName);//send the username to the server
+                client.outPut.println("username: " + userName);//send the username to the server//needs to be in the server not the client!!!
                 Thread clientThread = new Thread(new ChatHandler(client.inPut, client));
                 clientThread.start();
                 client.startConnection();
