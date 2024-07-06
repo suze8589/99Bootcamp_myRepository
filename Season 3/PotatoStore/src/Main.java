@@ -27,7 +27,7 @@ public class Main {
         introOptions.add("yes");
         introOptions.add("no");
         StringInputScanner question1 = new StringSetInputScanner(introOptions);
-        question1.setMessage("Do you want to buy potatoes? (yes/no) \n");
+        question1.setMessage("Do you want to buy potatoes? (yes/no) " );
         String choosePotatoes = prompt.getUserInput(question1);
 
 
