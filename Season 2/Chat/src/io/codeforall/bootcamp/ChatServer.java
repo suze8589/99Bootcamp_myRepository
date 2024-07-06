@@ -106,6 +106,11 @@ public class ChatServer {
             while ((message = in.readLine()) != null) {
                 System.out.println("Message send to client: " + message);
                 server.broadcast(message, this);
+
+                BufferedReader systemIn = new BufferedReader(new InputStreamReader(System.in));
+                String userName = systemIn.readLine();
+                System.out.println(userName);
+                client.outPut.println("username: " + userName);//send the username to the server//needs to be in the server not the client!!!
             }
         } catch (IOException e) {
             out.println("Error handling client connection: " + e.getMessage());

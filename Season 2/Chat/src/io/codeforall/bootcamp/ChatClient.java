@@ -60,20 +60,22 @@ public class ChatClient {
         boolean isConnected = true;
         while(isConnected) {
             try {
-                //prompt the user for their name
-                System.out.println("Enter your name: ");
-                BufferedReader systemIn = new BufferedReader(new InputStreamReader(System.in));
-                String userName = systemIn.readLine();
 
-                System.out.println("You are now chatting as " + userName);
                 //sending the request for connection
                 //a socket is a end-point
                 Socket socket = new Socket("localhost", 8085);
                 ChatClient client = new ChatClient(socket);
-                client.outPut.println("username: " + userName);//send the username to the server//needs to be in the server not the client!!!
+                //client.outPut.println("username: " + userName);//send the username to the server//needs to be in the server not the client!!!
                 Thread clientThread = new Thread(new ChatHandler(client.inPut, client));
                 clientThread.start();
                 client.startConnection();
+
+                //prompt the user for their name
+
+                System.out.println("Enter your name: ");
+                BufferedReader systemIn = new BufferedReader(new InputStreamReader(System.in));
+                String userName = systemIn.readLine();
+                System.out.println("You are now chatting as " + userName);
 
             } catch (IOException e) {
                 e.printStackTrace();
