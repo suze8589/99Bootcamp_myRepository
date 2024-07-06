@@ -61,6 +61,7 @@ public class ChatClient {
         while(isConnected) {
             try {
 
+                System.out.println("######## WELCOME ########");
                 //sending the request for connection
                 //a socket is a end-point
                 Socket socket = new Socket("localhost", 8085);
