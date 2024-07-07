@@ -78,6 +78,12 @@ public class ChatServer {
          }
     }
  }
+    public void sendPrompt(String message) {
+     for (ChatServer.ServerWorker worker : workers) {
+         worker.sendMessage("Message: " + message);
+     }
+    }
+
  //class ServerWorker handles the connection and implements runnable
  // bufferedReader and bufferedWriter
 
@@ -130,6 +136,7 @@ public class ChatServer {
         try{
             ChatServer server = new ChatServer();
             server.start();
+            server.sendPrompt("Send a message: " );
         } catch (IOException e){
             e.printStackTrace();
         }
