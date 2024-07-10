@@ -11,9 +11,11 @@ public class Main {
         customer1.setId(1);
         customer1.setName("Frodo");
         customer1.setEmail("frodobaggins@shiremail.com");
+
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("test");
         EntityManager em = emf.createEntityManager();
 
+        System.out.println("Puffings with Anacondings in the Nations");
         em.getTransaction().begin();
         em.persist(customer1);
 

@@ -5,6 +5,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
@@ -14,12 +15,6 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
-    private String email;
-
-    @Transient
-    private String password;
-
     @Version
     private Integer version;
 
@@ -27,7 +22,14 @@ public class Customer {
     private Date creationTime;
 
     @UpdateTimestamp
-    private Time updateTime;
+    private Date updateTime;
+
+    private String name;
+    private String email;
+
+    @Transient
+    private String password;
+
 
     public void setId(int id) {
         this.id = id;
@@ -54,5 +56,15 @@ public class Customer {
         return email;
     }
 
+    /*public Integer getVersion() {
+        return version;
+    }
 
+    public Date getCreationTime() {
+        return creationTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }*/
 }
