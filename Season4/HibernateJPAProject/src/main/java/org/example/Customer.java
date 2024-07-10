@@ -56,7 +56,27 @@ public class Customer {
         return email;
     }
 
-    /*public Integer getVersion() {
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public void setCreationTime(Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getVersion() {
         return version;
     }
 
@@ -66,5 +86,5 @@ public class Customer {
 
     public Date getUpdateTime() {
         return updateTime;
-    }*/
+    }
 }
