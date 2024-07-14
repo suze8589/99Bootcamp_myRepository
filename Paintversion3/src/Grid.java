@@ -57,10 +57,10 @@ public class Grid {
     public void paint(int col, int row){
         if(col >= 0 && col < cols && row >= 0 && row < rows) {
             switch (cellPaints[col][row]) {
-                case ERASE:
+                case PAINT:
                     paintCell(col, row);
                     break;
-                case PAINT:
+                case ERASE:
                     eraseCell(col, row);
                     break;
             }
