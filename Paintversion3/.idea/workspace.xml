@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87e3e14e-9baf-4ecb-9f6c-85bee78bb7b4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Season 3/PotatoStore/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Season 3/PotatoStore/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Season 3/PotatoStore/out/production/PotatoStore/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +39,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/codecadet/Desktop/Paintversion3",
+    "last_opened_file_path": "/Users/codecadet/myRepository/Paintversion3",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -87,10 +90,22 @@
       <workItem from="1719481957860" duration="1115000" />
       <workItem from="1719755727942" duration="1935000" />
       <workItem from="1719770969851" duration="462000" />
+      <workItem from="1720975737302" duration="1945000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

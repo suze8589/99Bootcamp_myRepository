@@ -46,6 +46,7 @@ public class Grid {
                 System.out.println("WOWOWOWOOWOWOWOOWOWOOW");
 
                 cells[col][row] = new Rectangle(x, y, cellSize, cellSize);
+                cells[col][row].setColor(Color.GREEN);
                 cells[col][row].draw();//instanciar e guardar numa array list, talvez
                 cellPaints[col][row] = CellPaint.PAINT;
                 //comparar o x e o y da cellsize da grid com o curso

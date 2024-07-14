@@ -2,11 +2,23 @@
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
+/**
+ * this is a comment :)
+ * this class player represents a player in the grid
+ * the player can move around and interact with the grid by painting or erasing the cells.
+ */
 public class Player {
     private final Rectangle player;
     private final Grid grid;//the constructor needs to now the grid to reference grid boundaries.
-    //private int cellSize;
+    private boolean isPainting = true;
     //private boolean painted;
+
+    /**
+     * Constructs a Player instance.
+     *
+     * @param player The Rectangle object representing the player.
+     * @param grid The Grid object which the player interacts with.
+     */
 
     public Player(Rectangle player, Grid grid) {
         this.player = player;
@@ -52,17 +64,24 @@ public class Player {
         }
     }
 
+    /**
+     * Toggle between painting and erasing
+     */
+    public void toggleMode(){
+        isPainting = !isPainting;
+    }
+
     public void paintCell(){
         int col = (player.getX() - 10) / grid.getCellSize();
         int row = (player.getY() - 10) / grid.getCellSize();
         grid.paint(col,row);
     }
     public int getX() {
-        return 0;
+        return player.getX();
     }
 
     public int getY() {
-        return 0;
+        return player.getY();
     }
 
 
