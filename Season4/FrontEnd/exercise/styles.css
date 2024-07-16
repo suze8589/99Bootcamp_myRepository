@@ -1,0 +1,65 @@
+.container{
+    display: in-line; /* Use flexbox to align children horizontally */
+    justify-content: center; /* Center align the inner boxes horizontally */
+    padding: 2px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.box{  
+    background-color: rgb(176, 48, 48);
+    width: 200px;
+    border: 15px solid green;
+    padding: 60px;
+    margin: 20px;
+    text-align: center;
+    
+}
+
+
+.border{
+    border: 5px solid black;
+    background-color: white;
+    width: 100px;
+    padding: 10px;
+    display: inline-block; /* Makes the box inline */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.slim {
+    width: 100px;
+    overflow: hidden;
+    font-size: 20px;
+    color: beige;
+    }
+    
+.short {
+    height: 100px;
+    overflow: scroll;
+    }
+
+/*legend*/
+#smallbox{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+        
+    }
+    
+.padding{
+    background-color: green;
+    width: 100px;
+    padding: 10px;
+    margin: 5px;
+    border: 5px solid green;
+    display: inline-block; /* Makes the box inline */
+        
+    }
+    
+.margin{
+    background-color: antiquewhite;
+    width: 100px;
+    padding: 10px;
+    margin: 5px;
+    border: 5px solid green;
+    display: inline-block; /* Makes the box inline */
+    }
+    
