@@ -1,0 +1,110 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#navbar {
+    height: 40px;
+    background-color: grey;
+    color: azure;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    top: 0;
+    left: 0;
+    position: sticky;
+    
+}
+
+#navbar ul {
+    width: 100%;
+    list-style: none;
+    display: inline-flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;    
+    
+}
+
+
+#navbar li {
+    width: 100%;
+    border: 2px solid coral;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+       
+    
+}
+
+header {
+    height: 200px;
+    background-color: blanchedalmond;
+    color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main {
+    display: inline-flex;
+    width: 100%;
+}
+
+#main-content {
+    height: 2000px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid orange;
+
+}
+
+
+#sidebar {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    background-color: antiquewhite;
+    top: 65px;
+
+}
+
+
+#sidebar ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    top: 8.8%;
+    left: 0;
+    position: sticky;   
+    
+}
+
+#sidebar li{
+    padding: 10%;
+    color: rgb(255, 104, 4);
+    margin: 1px;
+    border: 2px solid orange;
+    display: flex;
+    justify-content: flex-end;
+   
+}
+
+
+footer {
+    height: 100px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+    
