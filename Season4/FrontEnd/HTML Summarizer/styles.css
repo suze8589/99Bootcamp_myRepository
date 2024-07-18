@@ -5,7 +5,6 @@ body {
 
 #navbar {
 
-    height: 40px;
     background-color: darkred; 
     color: white; 
     padding: 1%;
@@ -26,6 +25,8 @@ body {
     justify-content: center
 
 }
+
+
 
 
 header {
@@ -51,11 +52,13 @@ main {
 
 .image img{
     height: 50%;
-    width: 80%;
+    width: 70%;
 }
 
 .quizz{
     color: darkred;
+    text-align: center;
+    
 
 }
 
@@ -114,15 +117,14 @@ section{
 
 
 footer {
-
     height: 100px;
     background-color: darkgrey;
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
+
+
 
 #sidebar a {
 
