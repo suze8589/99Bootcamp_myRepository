@@ -1,0 +1,142 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+#navbar {
+
+    height: 40px;
+    background-color: darkred; 
+    color: white; 
+    padding: 1%;
+    top: 0;
+    left: 0;
+    position: sticky;
+
+}
+
+
+#navbar h1 {
+    width: 100%;
+    border-radius: 2%;
+    margin: 2px 2px;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+
+}
+
+
+header {
+    height: 100px;
+    background-color: darkgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header h2 {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+main {
+    display: inline-flex;
+    width: 100%;
+
+}
+
+.image img{
+    height: 50%;
+    width: 80%;
+}
+
+.quizz{
+    color: darkred;
+
+}
+
+
+#main-content {
+
+    height: 100%;
+    width: 100%;
+    display: block;
+    border: 2px solid grey;
+    font-size: 22px;
+
+}
+
+section{
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+
+
+#sidebar {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    background-color: darkgray;
+    top: 65px;
+
+
+}
+
+
+
+#sidebar ul{
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    top: 8.8%;
+    left: 0;
+    position: sticky;
+}
+
+
+#sidebar li{
+
+    padding: 10%;
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+footer {
+
+    height: 100px;
+    background-color: darkgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+#sidebar a {
+
+    background-color: darkred;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
+

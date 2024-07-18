@@ -7,6 +7,8 @@ body {
     height: 100vh;
     margin: 0;
 }
+
+
 .profile-container {
     background-color: #fff;
     padding: 20px;
@@ -16,6 +18,8 @@ body {
     max-width: 400px;
     width: 100%;
 }
+
+
 .circle {
     background-color: #aaa;
     border-radius: 50%;
@@ -26,26 +30,38 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-  .circle img {
+
+
+.circle img {
     position: 0;
     bottom: 0;
     width: 100%;
-  }
+}
+
+
 h1 {
     color: brown;
 }
+
+
 .update-info {
     color: rgb(127, 119, 119);
     font-size: 12px;
 }
+
+
 h2 {
     color: rgb(0, 0, 0);
 }
+
+
 .contact-info p,
 .contact-info a {
     margin: 5px 0;
     color: rgb(0, 0, 0);
 }
+
+
 .social-links a {
     color: brown;
     text-decoration: none;
@@ -55,6 +71,7 @@ h2 {
 .hobbies ul{
     list-style: none;
     padding-left: 0%;
+    padding-top: 5%;
 }
 
 .hobbies li{
@@ -63,6 +80,10 @@ h2 {
 
 .hobbies h4{
     color: brown;
+}
+
+.summary{
+    padding-top: 5%;
 }
 
 .summary h3 {
